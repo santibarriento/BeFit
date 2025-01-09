@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "473455324752",
+    "project_id": "befit-81d9e",
+    "storage_bucket": "befit-81d9e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:473455324752:android:d91defdeced5df4788ab55",
+        "android_client_info": {
+          "package_name": "santiago.barr.befit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCW9ypncigQtMeoZJ0nB4w9Cb7fx20Y878"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
