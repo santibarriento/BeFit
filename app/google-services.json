@@ -12,7 +12,12 @@
           "package_name": "santiago.barr.befit"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "473455324752-mmtqmlish8oaq7cbdm9s0bcnvs9lko3e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCW9ypncigQtMeoZJ0nB4w9Cb7fx20Y878"
@@ -20,7 +25,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "473455324752-mmtqmlish8oaq7cbdm9s0bcnvs9lko3e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
