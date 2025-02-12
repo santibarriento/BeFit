@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">BeFit</string>
+    <string name="app_name" translatable="false">BeFit</string>
+    <string name="default_web_client_id" translatable="false">473455324752-mmtqmlish8oaq7cbdm9s0bcnvs9lko3e.apps.googleusercontent.com</string>
+    <string name="user_name">Username</string>
+    <string name="user_email" translatable="false">Email</string>
+    <string name="user_phone" translatable="false">Phone Number</string>
 </resources>

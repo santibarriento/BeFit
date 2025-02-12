@@ -94,10 +94,18 @@ public class AuthManager {
                         // Inicio de sesión exitoso
                         FirebaseUser user = firebaseAuth.getCurrentUser();
                         Toast.makeText(activity, "Inicio de sesión con Google: " + user.getEmail(), Toast.LENGTH_SHORT).show();
+
+                        // Crear un Intent para abrir la actividad DashboardActivity
+                        Intent intent = new Intent(activity, DashboardActivity.class);
+                        activity.startActivity(intent);
+
+                        // Si deseas cerrar la actividad actual (por ejemplo, MainActivity), puedes hacerlo:
+                        activity.finish();
                     } else {
                         // Manejar errores
                         Toast.makeText(activity, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }
+
 }

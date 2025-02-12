@@ -2,10 +2,11 @@ package santiago.barr.befit;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.FirebaseApp;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,22 +16,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FirebaseApp.initializeApp(this);
 
         // Inicializa AuthManager
         authManager = new AuthManager(this);
 
-        // Botones de la pantalla inicial
+        // Botón de Google
         ImageView googleButton = findViewById(R.id.google_login);
-        ImageView appleButton = findViewById(R.id.apple_login);
-        Button emailButton = findViewById(R.id.login_button);
 
-        // Acciones para cada botón
+        // Acción para el botón de Google
         googleButton.setOnClickListener(v -> authManager.signInWithGoogle(this));
-        appleButton.setOnClickListener(v -> authManager.signInWithApple(this));
-        emailButton.setOnClickListener(v -> {
-            // Abre la actividad de registro por correo
-            startActivity(new Intent(this, EmailRegisterActivity.class));
-        });
     }
 
     @Override
