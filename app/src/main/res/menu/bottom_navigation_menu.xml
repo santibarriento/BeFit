@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/hogar"
+        android:title="Inicio" />
+
+    <item
+        android:id="@+id/nav_trainings"
+        android:icon="@drawable/jugar"
+        android:title="Entrenamientos" />
+
+    <item
+        android:id="@+id/nav_professionals"
+        android:icon="@drawable/estrella"
+        android:title="Profesionales" />
+
+    <item
+        android:id="@+id/nav_chat"
+        android:icon="@drawable/charlar"
+        android:title="Chat" />
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/pfondo"
+        android:title="Perfil" />
+
+</menu>

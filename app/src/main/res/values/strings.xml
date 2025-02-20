@@ -4,4 +4,9 @@
     <string name="user_name">Username</string>
     <string name="user_email" translatable="false">Email</string>
     <string name="user_phone" translatable="false">Phone Number</string>
+    <style name="CircularImage">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
 </resources>

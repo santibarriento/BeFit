@@ -14,22 +14,25 @@
         android:layout_margin="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.092">
+        app:layout_constraintVertical_bias="0.081">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/user_avatar"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="80dp"
+            android:layout_height="77dp"
             android:src="@drawable/perfilbefit"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/CircularImage" />
 
         <TextView
             android:id="@+id/welcome_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:text="¡Bienvenido!"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -41,7 +44,8 @@
             android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Elena López"
+            android:layout_marginStart="16dp"
+            android:text="@string/user_name"
             android:textColor="@color/black"
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@id/user_avatar"
@@ -50,16 +54,15 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/background_container"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="421dp"
+        android:layout_height="581dp"
         android:layout_marginTop="16dp"
         android:background="@color/gris_fondo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/welcome_container"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
         <!-- Botones de entrenamiento -->
 
@@ -67,7 +70,7 @@
             android:id="@+id/training_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="Entrenamientos"
             android:textColor="@color/black"
@@ -78,143 +81,159 @@
 
         <ImageButton
             android:id="@+id/todo_button"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:background="@drawable/vertodo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.903"
+            app:layout_constraintHorizontal_bias="0.951"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.262" />
+            app:layout_constraintVertical_bias="0.323" />
 
         <ImageButton
             android:id="@+id/pilates_button"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="28dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:background="@drawable/pilates"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.007"
-            app:layout_constraintStart_toEndOf="@+id/crossfit_button"
+            app:layout_constraintHorizontal_bias="0.652"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.262" />
+            app:layout_constraintVertical_bias="0.321" />
 
         <ImageButton
             android:id="@+id/crossfit_button"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="28dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:background="@drawable/pesas"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/pesas_button"
+            app:layout_constraintHorizontal_bias="0.356"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.262" />
+            app:layout_constraintVertical_bias="0.319" />
 
         <ImageButton
             android:id="@+id/pesas_button"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:background="@drawable/pesas"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.136"
+            app:layout_constraintHorizontal_bias="0.048"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.264" />
+            app:layout_constraintVertical_bias="0.321" />
 
         <ImageButton
             android:id="@+id/yoga_button"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginBottom="20dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:background="@drawable/yoga"
-            app:layout_constraintBottom_toTopOf="@+id/todo_button"
-            app:layout_constraintStart_toEndOf="@+id/swimming_button" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.951"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.107" />
 
         <ImageButton
             android:id="@+id/swimming_button"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginBottom="20dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:background="@drawable/nadar"
-            app:layout_constraintBottom_toTopOf="@+id/pilates_button"
-            app:layout_constraintStart_toEndOf="@+id/cycling_button" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.652"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.111" />
 
         <ImageButton
             android:id="@+id/cycling_button"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginBottom="20dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:background="@drawable/bicicleta"
-            app:layout_constraintBottom_toTopOf="@+id/crossfit_button"
-            app:layout_constraintStart_toEndOf="@+id/correr_button" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.356"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.113" />
 
         <ImageButton
             android:id="@+id/correr_button"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="48dp"
-            android:layout_marginBottom="20dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:background="@drawable/correr"
-            app:layout_constraintBottom_toTopOf="@+id/pesas_button"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.048"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.113" />
 
         <TextView
             android:id="@+id/nearby_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="224dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="260dp"
             android:text="Actividades cercanas"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/training_title" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/nearby_activities_list"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_width="312dp"
+            android:layout_height="156dp"
+            android:layout_marginTop="300dp"
             android:padding="16dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/nearby_title" />
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/befitdashboardimage"
-        android:layout_width="70dp"
-        android:layout_height="61dp"
+        android:layout_width="72dp"
+        android:layout_height="62dp"
         android:layout_marginTop="2dp"
         android:layout_marginBottom="3dp"
         android:src="@drawable/befit_logo_black"
         app:layout_constraintBottom_toTopOf="@+id/welcome_container"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/settings_icon"
-        android:layout_width="36dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="3dp"
-        android:src="@drawable/settings"
-        app:layout_constraintBottom_toTopOf="@+id/welcome_container"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.125" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_bar"
+        android:layout_width="304dp"
+        android:layout_height="58dp"
+        android:iconifiedByDefault="false"
+        android:queryHint="Buscar..."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:queryBackground="@drawable/searchview_background"
+        tools:layout_editor_absoluteY="2dp" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:itemIconTint="@null"
+        app:itemTextColor="@color/black"
+        app:menu="@menu/bottom_navigation_menu"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

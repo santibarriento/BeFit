@@ -38,8 +38,10 @@ public class AuthManager {
 
     // Inicio de sesión con Google
     public void signInWithGoogle(Activity activity) {
-        Intent signInIntent = googleSignInClient.getSignInIntent();
-        activity.startActivityForResult(signInIntent, RC_SIGN_IN);
+        googleSignInClient.signOut().addOnCompleteListener(activity, task -> {
+            Intent signInIntent = googleSignInClient.getSignInIntent();
+            activity.startActivityForResult(signInIntent, RC_SIGN_IN);
+        });
     }
 
     // Inicio de sesión con Apple

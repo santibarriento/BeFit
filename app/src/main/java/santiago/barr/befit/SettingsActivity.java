@@ -1,11 +1,20 @@
 package santiago.barr.befit;
 
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.os.Bundle;
+import android.text.InputType;
+import android.util.Log;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.RequestQueue;
@@ -15,69 +24,156 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SettingsActivity extends AppCompatActivity {
 
     private TextView userName, userEmail, userPhone, userAddress;
-    private ImageView userProfileImage;
+    private ImageView userProfileImage, changePhone, changeAddress;
     private Switch silentModeSwitch, darkModeSwitch;
     private SharedPreferences sharedPreferences;
-    private RequestQueue requestQueue;  // Declaramos requestQueue como un atributo de la clase
+    private RequestQueue requestQueue;
+    private DatabaseReference databaseReference;
+    private FirebaseUser firebaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settingsactivity);
 
-        // Inicializamos Volley request queue
+        // Inicializar Firebase Database
+        databaseReference = FirebaseDatabase.getInstance("https://befit-81d9e-default-rtdb.europe-west1.firebasedatabase.app/").getReference("users");
+
+        // Inicializar Volley request queue
         requestQueue = Volley.newRequestQueue(this);
 
         // Inicializa vistas
-        userName = findViewById(R.id.username_text_google);
-        userEmail = findViewById(R.id.email_text_google);
-        userPhone = findViewById(R.id.phone_text_google);
+        userName = findViewById(R.id.username_text);
+        userEmail = findViewById(R.id.email_text);
+        userPhone = findViewById(R.id.phone_text);
+        userAddress = findViewById(R.id.address_text);
         userProfileImage = findViewById(R.id.profile_image);
+        changePhone = findViewById(R.id.change_phone);
+        changeAddress = findViewById(R.id.change_adress);
         silentModeSwitch = findViewById(R.id.silent_mode_switch);
         darkModeSwitch = findViewById(R.id.dark_mode_switch);
+        ImageView backButton = findViewById(R.id.back_button_pref);
 
-        // Cargar datos desde Firebase (si el usuario ya está logueado)
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-            userName.setText(user.getDisplayName());
-            userEmail.setText(user.getEmail());
+        // Listener para el botón de retroceso
+        backButton.setOnClickListener(v -> finish());
+
+        // Obtener usuario autenticado en Firebase
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (firebaseUser != null) {
+            saveUserToDatabase(firebaseUser); // Guarda o actualiza los datos en Firebase
+            userName.setText(firebaseUser.getDisplayName());
+            userEmail.setText(firebaseUser.getEmail());
         }
 
-        // Cargar datos del usuario desde Google Sign-In (nombre, correo y teléfono)
+        // Cargar datos del usuario desde Google Sign-In
         loadGoogleUserInfo();
 
-        // Aquí tus preferencias de la aplicación
+        // Cargar datos desde SharedPreferences
         sharedPreferences = getSharedPreferences("UserPreferences", MODE_PRIVATE);
+        userPhone.setText(sharedPreferences.getString("phone", "Número no disponible"));
+        userAddress.setText(sharedPreferences.getString("address", "Dirección no disponible"));
         silentModeSwitch.setChecked(sharedPreferences.getBoolean("silent_mode", false));
         darkModeSwitch.setChecked(sharedPreferences.getBoolean("dark_mode", false));
+
+        // Listeners para cambiar datos
+        changePhone.setOnClickListener(v -> showEditDialog("Teléfono", userPhone, "phone"));
+        changeAddress.setOnClickListener(v -> showEditDialog("Dirección", userAddress, "address"));
     }
 
-    private void loadGoogleUserInfo() {
-        // Obtenemos la cuenta de Google autenticada
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+    private void saveUserToDatabase(FirebaseUser user) {
+        if (user == null) {
+            Log.e("Firebase", "Error: Usuario es NULL");
+            return;
+        }
 
+        String userId = user.getUid();
+        String name = user.getDisplayName();
+        String email = user.getEmail();
+        String phone = user.getPhoneNumber() != null ? user.getPhoneNumber() : "No disponible";
+        String profileImageUrl = user.getPhotoUrl() != null ? user.getPhotoUrl().toString() : "";
+
+        Log.d("Firebase", "Guardando usuario: " + userId);
+
+        User newUser = new User(userId, name, email, phone, profileImageUrl);
+
+        databaseReference.child(userId).setValue(newUser)
+                .addOnSuccessListener(aVoid -> Log.d("Firebase", "Usuario guardado correctamente en la BD"))
+                .addOnFailureListener(e -> Log.e("Firebase", "Error al guardar usuario en Firebase", e));
+    }
+
+
+    private void loadGoogleUserInfo() {
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         if (account != null) {
-            // Nombre de usuario
             userName.setText(account.getDisplayName());
-            // Email
             userEmail.setText(account.getEmail());
 
-            // Teléfono: No está disponible directamente en GoogleSignInAccount
-            userPhone.setText("Número no disponible");
-
-            // Foto de perfil
             if (account.getPhotoUrl() != null) {
                 String photoUrl = account.getPhotoUrl().toString();
-                // Aquí agregas el código para cargar la foto de perfil (lo mismo que ya tienes)
                 ImageRequest imageRequest = new ImageRequest(photoUrl,
-                        response -> userProfileImage.setImageBitmap(response),
-                        0, 0, ImageView.ScaleType.CENTER_CROP, null, error -> userProfileImage.setImageResource(R.drawable.perfilbefit));
+                        response -> userProfileImage.setImageBitmap(getCircularBitmap(response)),
+                        0, 0, ImageView.ScaleType.CENTER_CROP, null,
+                        error -> userProfileImage.setImageResource(R.drawable.perfilbefit));
                 requestQueue.add(imageRequest);
             }
+        }
+    }
+
+    private Bitmap getCircularBitmap(Bitmap bitmap) {
+        int size = Math.min(bitmap.getWidth(), bitmap.getHeight());
+        Bitmap output = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
+
+        Canvas canvas = new Canvas(output);
+        Paint paint = new Paint();
+        paint.setAntiAlias(true);
+        paint.setShader(new BitmapShader(bitmap, BitmapShader.TileMode.CLAMP, BitmapShader.TileMode.CLAMP));
+
+        float radius = size / 2f;
+        canvas.drawCircle(radius, radius, radius, paint);
+
+        return output;
+    }
+
+    private void showEditDialog(String field, TextView textView, String firebaseField) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Modificar " + field);
+
+        final EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_TEXT);
+        input.setText(textView.getText().toString());
+
+        builder.setView(input);
+        builder.setPositiveButton("Guardar", (dialog, which) -> {
+            String newValue = input.getText().toString();
+            textView.setText(newValue);
+            saveToPreferences(firebaseField, newValue);
+            updateUserFieldInDatabase(firebaseField, newValue);
+        });
+        builder.setNegativeButton("Cancelar", (dialog, which) -> dialog.cancel());
+
+        builder.show();
+    }
+
+    private void saveToPreferences(String key, String value) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(key, value);
+        editor.apply();
+    }
+
+    private void updateUserFieldInDatabase(String field, String value) {
+        if (firebaseUser != null) {
+            databaseReference.child(firebaseUser.getUid()).child(field).setValue(value)
+                    .addOnSuccessListener(aVoid -> {
+                        Log.d("Firebase", "Campo " + field + " actualizado");
+                        Toast.makeText(this, "Datos actualizados", Toast.LENGTH_SHORT).show();
+                    })
+                    .addOnFailureListener(e -> Log.e("Firebase", "Error al actualizar " + field, e));
         }
     }
 }

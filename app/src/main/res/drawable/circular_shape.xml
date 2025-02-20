@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFFFFF"/> <!-- Color blanco, por si necesitas el borde de fondo -->
+    <corners android:radius="25dp"/> <!-- Esto hace que la imagen sea circular -->
+</shape>

@@ -34,6 +34,9 @@ android {
 
 dependencies {
     implementation("com.google.android.gms:play-services-auth:20.7.0") // Biblioteca para Google Sign-In
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+
+
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -41,6 +44,7 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation(libs.gridlayout)
     implementation(libs.volley)
+    implementation(libs.firebase.database)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
