@@ -1,5 +1,6 @@
 package santiago.barr.befit;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
@@ -8,12 +9,14 @@ import android.graphics.Paint;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,6 +25,7 @@ import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -41,7 +45,7 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settingsactivity);
-
+        setupBottomNavigation(); // Barra de navegación
         // Inicializar Firebase Database
         databaseReference = FirebaseDatabase.getInstance("https://befit-81d9e-default-rtdb.europe-west1.firebasedatabase.app/").getReference("users");
 
@@ -139,7 +143,36 @@ public class SettingsActivity extends AppCompatActivity {
 
         return output;
     }
-
+    // Barra de navegación
+    protected void setupBottomNavigation() {
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setItemIconTintList(null);
+        if (bottomNavigationView != null) {
+            bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    int itemId = item.getItemId();
+                    if (itemId == R.id.nav_home) {
+                        startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
+                        return true;
+                    } else if (itemId == R.id.nav_trainings) {
+                        startActivity(new Intent(getApplicationContext(), TrainingsActivity.class));
+                        return true;
+                    } else if (itemId == R.id.nav_professionals) {
+                        startActivity(new Intent(getApplicationContext(), ProfessionalsActivity.class));
+                        return true;
+                    } else if (itemId == R.id.nav_chat) {
+                        startActivity(new Intent(getApplicationContext(), ChatActivity.class));
+                        return true;
+                    } else if (itemId == R.id.nav_profile) {
+                        startActivity(new Intent(getApplicationContext(), SettingsActivity.class)); // Abre perfil
+                        return true;
+                    }
+                    return false;
+                }
+            });
+        }
+    }
     private void showEditDialog(String field, TextView textView, String firebaseField) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Modificar " + field);
