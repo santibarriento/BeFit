@@ -35,6 +35,16 @@
             </intent-filter>
         </activity>
 
+        <!-- Expertos -->
+        <activity
+            android:name=".ProfessionalsActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <!-- Chat -->
         <activity
             android:name=".ChatActivity"

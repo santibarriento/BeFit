@@ -4,6 +4,8 @@
     <string name="user_name">Username</string>
     <string name="user_email" translatable="false">Email</string>
     <string name="user_phone" translatable="false">Phone Number</string>
+    <string name="expertodesc">Soy licenciada en Nutrición y apasionada por la salud integral. Mi misión es ayudarte a alcanzar tus metas de bienestar a través de una alimentación equilibrada y adaptada a tus necesidades individuales. Creo firmemente en que cada cuerpo es único y, por ello, mis planes son personalizados, sostenibles y realistas.</string>
+
     <style name="CircularImage">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>

@@ -23,7 +23,6 @@ import java.util.List;
 
 public class ChatActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
     private ChatAdapter chatAdapter;
     private List<Message> chatList;
     private DatabaseReference chatRef;
@@ -38,11 +37,9 @@ public class ChatActivity extends AppCompatActivity {
 
         setupBottomNavigation(); // Barra de navegación
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         chatList = new ArrayList<>();
         chatAdapter = new ChatAdapter(chatList, this);
-        recyclerView.setAdapter(chatAdapter);
 
         chatRef = FirebaseDatabase.getInstance().getReference("chats");
         loadChats();

@@ -19,8 +19,8 @@ import java.util.Locale;
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder> {
 
-    private List<Message> chatList;
-    private Context context;
+    private final List<Message> chatList;
+    private final Context context;
 
     public ChatAdapter(List<Message> chatList, Context context) {
         this.chatList = chatList;
