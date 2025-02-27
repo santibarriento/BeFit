@@ -53,6 +53,7 @@ public class ProfessionalsActivity extends AppCompatActivity {
     protected void setupBottomNavigation() {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setItemIconTintList(null);
+        bottomNavigationView.setSelectedItemId(R.id.nav_professionals);
         if (bottomNavigationView != null) {
             bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
                 @Override

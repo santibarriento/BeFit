@@ -96,6 +96,7 @@ public class ChatActivity extends AppCompatActivity {
     protected void setupBottomNavigation() {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setItemIconTintList(null);
+        bottomNavigationView.setSelectedItemId(R.id.nav_chat);
         if (bottomNavigationView != null) {
             bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
                 @Override

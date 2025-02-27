@@ -48,7 +48,6 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settingsactivity);
-
         setupBottomNavigation(); // Barra de navegación
 
         // Inicializar Firebase Database
@@ -173,6 +172,7 @@ public class SettingsActivity extends AppCompatActivity {
     // Barra de navegación
     protected void setupBottomNavigation() {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.nav_profile);
         bottomNavigationView.setItemIconTintList(null);
         if (bottomNavigationView != null) {
             bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
