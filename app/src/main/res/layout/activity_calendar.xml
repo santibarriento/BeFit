@@ -4,265 +4,338 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/green"
-    android:backgroundTint="#90C3B6">
+    android:background="@color/white"> <!-- Fondo cambiado a blanco -->
 
-    <ImageView
-        android:id="@+id/befitimagetop"
-        android:layout_width="109dp"
-        android:layout_height="82dp"
-        android:layout_gravity="center"
-        android:contentDescription="Profile Image"
-        android:scaleType="centerCrop"
-        android:src="@drawable/befit_logo_black"
+    <TextView
+        android:id="@+id/textViewNombreEvento2"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Yoga en la playa"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintHorizontal_bias="0.764"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.738" />
 
-    <ImageView
-        android:id="@+id/back_button_pref"
-        android:layout_width="40dp"
-        android:layout_height="34dp"
-        android:layout_gravity="center"
-        android:scaleType="centerCrop"
-        android:src="@drawable/left_arrow"
+    <TextView
+        android:id="@+id/textViewUbi2"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="Cambrils"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintHorizontal_bias="0.786"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.783" />
+
+    <TextView
+        android:id="@+id/textViewHoraEvento2"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="12:30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.786"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.859" />
+
+    <TextView
+        android:id="@+id/title_calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Proximos Eventos"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.136" />
+
+    <TextView
+        android:id="@+id/title_mes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MARZO"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.166" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="342dp"
+        android:layout_height="251dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.277"
+        app:srcCompat="@drawable/calendariobf" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="195dp"
+        android:layout_height="135dp"
+        android:background="@drawable/circular_shape"
+        android:clipToOutline="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.621"
+        app:srcCompat="@drawable/evento1" />
+
+    <ImageView
+        android:id="@+id/ubicacion_icono"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/location"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.584"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.591" />
+
+    <ImageView
+        android:id="@+id/ubicacion_icono2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/location"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.584"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.783" />
+
+    <ImageView
+        android:id="@+id/ubicacion_icono6"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/reloj"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.582"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.666" />
+
+    <ImageView
+        android:id="@+id/ubicacion_icono7"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/reloj"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.584"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.859" />
+
+    <ImageView
+        android:id="@+id/fecha_icono1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/calendario"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.584"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.628" />
+
+    <ImageView
+        android:id="@+id/fecha_icono"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/calendario"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.582"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.821" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="195dp"
+        android:layout_height="135dp"
+        android:background="@drawable/circular_shape"
+        android:clipToOutline="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.84"
+        app:srcCompat="@drawable/evento6" />
+
+    <TextView
+        android:id="@+id/textViewNombreEvento"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Clase de Aeróbic"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.764"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.542" />
+
+    <TextView
+        android:id="@+id/textViewFechaEvento"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="20/03/25"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.786"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.629" />
+
+    <TextView
+        android:id="@+id/textViewFechaEvento2"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="8/3/25"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.786"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.821" />
+
+    <TextView
+        android:id="@+id/textViewUbi"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="Vila-Seca"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.786"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.591" />
+
+    <TextView
+        android:id="@+id/textViewHoraEvento"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="10:30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.786"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.667" />
+
+    <!-- Contenedor verde en la parte superior -->
+
+    <!-- Barra inferior intacta -->
+    <ImageView
+        android:id="@+id/add_event_button_1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.947"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.619"
+        app:srcCompat="@drawable/mas" />
+
+    <ImageView
+        android:id="@+id/add_event_button_"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.817"
+        app:srcCompat="@drawable/mas" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/background_container"
-        android:layout_width="452dp"
-        android:layout_height="818dp"
-        android:background="@color/gris_fondo"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
-
-        <TextView
-            android:id="@+id/textViewNombreEvento2"
-            android:layout_width="185dp"
-            android:layout_height="35dp"
-            android:gravity="center"
-            android:text="Yoga en la playa"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.97"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.741" />
-
-        <TextView
-            android:id="@+id/textViewUbi2"
-            android:layout_width="100dp"
-            android:layout_height="35dp"
-            android:gravity="center"
-            android:text="Cambrils"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.818"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.785" />
+        app:layout_constraintVertical_bias="0.0">
 
         <ImageView
-            android:id="@+id/ubicacion_icono2"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_gravity="center"
+            android:id="@+id/back_button_pref"
+            android:layout_width="40dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="16dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/location"
+            android:src="@drawable/left_arrow"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.589"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.785" />
+            app:layout_constraintVertical_bias="0.5" />
 
-        <Button
-            android:id="@+id/add_event_2"
-            android:layout_width="191dp"
-            android:layout_height="43dp"
-            android:layout_marginTop="676dp"
-            android:background="@drawable/circle_green_solid"
-            android:backgroundTint="@color/green"
-            android:text="Añadir al Calendario"
-            android:textColor="@android:color/white"
+        <ImageView
+            android:id="@+id/befitimagetop"
+            android:layout_width="109dp"
+            android:layout_height="82dp"
+            android:contentDescription="Profile Image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/befit_logo_black"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.993"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textViewHoraEvento2"
-            android:layout_width="50dp"
-            android:layout_height="35dp"
-            android:gravity="center"
-            android:text="12:30"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.979"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.787" />
-
-        <TextView
-            android:id="@+id/title_calendar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Proximos Eventos"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle="bold|italic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.643"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <Button
-            android:id="@+id/add_event_1"
-            android:layout_width="191dp"
-            android:layout_height="43dp"
-            android:layout_marginTop="528dp"
-            android:background="@drawable/circle_green_solid"
-            android:text="Añadir al Calendario"
-            android:textColor="@android:color/white"
-            android:textColorLink="#90C3B6"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.993"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="444dp"
-            android:layout_height="332dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.114"
-            app:srcCompat="@drawable/calendar_ph" />
-
-        <ImageView
-            android:id="@+id/imageView10"
-            android:layout_width="195dp"
-            android:layout_height="135dp"
-            android:background="@drawable/circular_shape"
-            android:clipToOutline="true"
-            android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.071"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.632"
-            app:srcCompat="@drawable/evento1" />
-
-        <ImageView
-            android:id="@+id/ubicacion_icono"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_gravity="center"
-            android:scaleType="centerCrop"
-            android:src="@drawable/location"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.589"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.599" />
-
-        <ImageView
-            android:id="@+id/imageView11"
-            android:layout_width="195dp"
-            android:layout_height="135dp"
-            android:background="@drawable/circular_shape"
-            android:clipToOutline="true"
-            android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.071"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.849"
-            app:srcCompat="@drawable/evento6" />
-
-        <TextView
-            android:id="@+id/textViewNombreEvento"
-            android:layout_width="185dp"
-            android:layout_height="35dp"
-            android:gravity="center"
-            android:text="Clase de Aeróbic"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.97"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.553" />
-
-        <TextView
-            android:id="@+id/textViewFechaEvento"
-            android:layout_width="185dp"
-            android:layout_height="16dp"
-            android:gravity="center"
-            android:text="20/03/25"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.97"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.628" />
-
-        <TextView
-            android:id="@+id/textViewFechaEvento2"
-            android:layout_width="185dp"
-            android:layout_height="16dp"
-            android:gravity="center"
-            android:text="8/4/25"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.97"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.812" />
-
-        <TextView
-            android:id="@+id/textViewUbi"
-            android:layout_width="100dp"
-            android:layout_height="35dp"
-            android:gravity="center"
-            android:text="Vila-Seca"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.818"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.599" />
-
-        <TextView
-            android:id="@+id/textViewHoraEvento"
-            android:layout_width="50dp"
-            android:layout_height="35dp"
-            android:gravity="center"
-            android:text="10:30"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.979"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.599" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

@@ -26,7 +26,10 @@ import com.google.firebase.database.FirebaseDatabase;
 public class DashboardActivity extends Activity {
     private TextView user_nameDBR;
     private ImageView userProfileImage;
-    private ImageView actividadesfoto, actividadesfoto2, actividadesfoto3, actividadesfoto4;
+    private ImageView actividadesfoto, actividadesfoto2, actividadesfoto3, actividadesfoto4,
+            premiumButton,
+            correrButton,biciButton,nadarButton,yogaButton,
+            pesasButton,crossfitButton,pilatesButton,todoButton;
     private RequestQueue requestQueue;
     private DatabaseReference databaseReference;
     private FirebaseUser firebaseUser;
@@ -43,18 +46,39 @@ public class DashboardActivity extends Activity {
         // Inicializar Volley request queue
         requestQueue = Volley.newRequestQueue(this);
 
-        // Inicialización de los ImageViews
+        // Inicialización de los ImageViews de eventos
         userProfileImage = findViewById(R.id.user_avatar);
         actividadesfoto = findViewById(R.id.imageViewActividades1);  // Ejemplo de ImageView
         actividadesfoto2 = findViewById(R.id.imageViewActividades2);
         actividadesfoto3 = findViewById(R.id.imageViewActividades3);
         actividadesfoto4 = findViewById(R.id.imageViewActividades4);
+        //entrenamientos
+        biciButton= findViewById(R.id.cycling_button);
+        correrButton= findViewById(R.id.correr_button);
+        nadarButton= findViewById(R.id.swimming_button);
+        yogaButton =findViewById(R.id.yoga_button);
+        pesasButton =findViewById(R.id.pesas_button);
+        crossfitButton =findViewById(R.id.crossfit_button);
+        pilatesButton =findViewById(R.id.pilates_button);
+        todoButton =findViewById(R.id.todo_button);
+        //premium
+        premiumButton =findViewById(R.id.imageViewPremium);
 
         // Asignar un único OnClickListener para todos los ImageViews
         asignarListener(actividadesfoto, "");
         asignarListener(actividadesfoto2, "");
         asignarListener(actividadesfoto3, "");
         asignarListener(actividadesfoto4, "");
+        //ejercicios1
+        asignarListener(biciButton,"");
+        asignarListener(correrButton,"");
+        asignarListener(nadarButton,"");
+        asignarListener(yogaButton,"");
+        //ejercicios2
+        asignarListener(pesasButton,"");
+        asignarListener(crossfitButton,"");
+        asignarListener(pilatesButton,"");
+        asignarListener(todoButton,"");
 
         // Inicialización del TextView de nombre de usuario
         user_nameDBR = findViewById(R.id.user_name);
@@ -65,6 +89,16 @@ public class DashboardActivity extends Activity {
             user_nameDBR.setText(firebaseUser.getDisplayName());
             loadGoogleUserInfo();
         }
+
+        //PREMIUM
+        ImageView premiumButton =findViewById(R.id.imageViewPremium);
+        premiumButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DashboardActivity.this,PremiumActivity.class);
+                startActivity(intent);
+            }
+        });
         // Encuentra la vista y asigna el listener de calendario
         ImageView imageViewCalendario = findViewById(R.id.imageViewCalendario);
         imageViewCalendario.setOnClickListener(new View.OnClickListener() {

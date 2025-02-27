@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.provider.CalendarContract;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -20,7 +21,7 @@ import java.util.Calendar;
 public class CalendarActivity extends AppCompatActivity {
 
     private ImageView backButton, Befit;
-    private Button addEvent1Button, addEvent2Button;
+    private ImageView addEvent1Button, addEvent2Button;
     private TextView eventName1, eventLocation1, eventDate1, eventTime1;
     private TextView eventName2, eventLocation2, eventDate2, eventTime2;
     private BottomNavigationView bottomNavigationView;
@@ -35,8 +36,8 @@ public class CalendarActivity extends AppCompatActivity {
         // Inicializar vistas
         backButton = findViewById(R.id.back_button_pref);
         Befit = findViewById(R.id.befitimagetop);
-        addEvent1Button = findViewById(R.id.add_event_1);
-        addEvent2Button = findViewById(R.id.add_event_2);
+        addEvent1Button = findViewById(R.id.add_event_button_1);
+        addEvent2Button = findViewById(R.id.add_event_button_);
         eventName1 = findViewById(R.id.textViewNombreEvento);
         eventLocation1 = findViewById(R.id.textViewUbi);
         eventDate1 = findViewById(R.id.textViewFechaEvento);
@@ -100,19 +101,24 @@ public class CalendarActivity extends AppCompatActivity {
 
     private void agregarEventoCalendario(String titulo, String ubicacion, String fecha, String hora) {
         try {
+            if (titulo.isEmpty() || ubicacion.isEmpty() || fecha.isEmpty() || hora.isEmpty()) {
+                Toast.makeText(this, "Faltan datos del evento", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
             String[] fechaParts = fecha.split("/");
-            if (fechaParts.length < 3) {
-                Toast.makeText(this, "Formato de fecha incorrecto", Toast.LENGTH_SHORT).show();
+            if (fechaParts.length != 3) {
+                Toast.makeText(this, "Formato de fecha incorrecto. Usa DD/MM/YY", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             int dia = Integer.parseInt(fechaParts[0]);
-            int mes = Integer.parseInt(fechaParts[1]) - 1; // Meses en Calendar empiezan desde 0
-            int anio = Integer.parseInt("20" + fechaParts[2]);
+            int mes = Integer.parseInt(fechaParts[1]) - 1;
+            int anio = fechaParts[2].length() == 2 ? Integer.parseInt("20" + fechaParts[2]) : Integer.parseInt(fechaParts[2]);
 
             String[] horaParts = hora.split(":");
-            if (horaParts.length < 2) {
-                Toast.makeText(this, "Formato de hora incorrecto", Toast.LENGTH_SHORT).show();
+            if (horaParts.length != 2) {
+                Toast.makeText(this, "Formato de hora incorrecto. Usa HH:MM", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -127,8 +133,9 @@ public class CalendarActivity extends AppCompatActivity {
             abrirCalendario(titulo, ubicacion, beginTime.getTimeInMillis(), endTime.getTimeInMillis());
 
         } catch (Exception e) {
-            Toast.makeText(this, "Error al agregar evento: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Error al procesar el evento: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
+
     }
 
     // Método para crear un evento en el calendario
@@ -139,6 +146,10 @@ public class CalendarActivity extends AppCompatActivity {
                 .putExtra(CalendarContract.Events.EVENT_LOCATION, location)
                 .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, begin)
                 .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, end);
+        Log.d("CALENDAR_EVENT", "Título: " + title);
+        Log.d("CALENDAR_EVENT", "Ubicación: " + location);
+        Log.d("CALENDAR_EVENT", "Inicio: " + begin);
+        Log.d("CALENDAR_EVENT", "Fin: " + end);
 
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);

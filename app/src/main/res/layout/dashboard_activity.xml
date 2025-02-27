@@ -1,430 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/green"
-    tools:context=".DashboardActivity">
+    android:background="@color/white"
+    tools:context=".DashboardActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="101dp">
 
+    <!-- Botones de entrenamiento -->
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/welcome_container"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+    <ImageButton
+        android:id="@+id/todo_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/circle_green_solid"
+        android:padding="7dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/vertodo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.916"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.065">
+        app:layout_constraintVertical_bias="0.422" />
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/user_avatar"
-            android:layout_width="80dp"
-            android:layout_height="77dp"
-            android:src="@drawable/perfilbefit"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/CircularImage" />
+    <TextView
+        android:id="@+id/textViewTodo"
+        android:layout_width="70dp"
+        android:layout_height="22dp"
+        android:gravity="center"
+        android:text="Ver Todo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.487" />
 
-        <TextView
-            android:id="@+id/welcome_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="¡Bienvenido!"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/user_avatar"
-            app:layout_constraintTop_toTopOf="parent" />
+    <ImageButton
+        android:id="@+id/yoga_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/circle_green_solid"
+        android:padding="7dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/yoga"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.272" />
 
-        <TextView
-            android:id="@+id/user_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="@string/user_name"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@id/user_avatar"
-            app:layout_constraintTop_toBottomOf="@id/welcome_text" />
+    <TextView
+        android:id="@+id/textViewYoga"
+        android:layout_width="70dp"
+        android:layout_height="22dp"
+        android:gravity="center"
+        android:text="Yoga"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.347" />
 
-        <ImageView
-            android:id="@+id/imageViewCalendario"
-            android:layout_width="53dp"
-            android:layout_height="43dp"
-            android:src="@drawable/calendario"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.95"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageButton
+        android:id="@+id/pilates_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/circle_green_solid"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/pilates"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.631"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.422" />
+
+    <TextView
+        android:id="@+id/textViewPilates"
+        android:layout_width="70dp"
+        android:layout_height="22dp"
+        android:gravity="center"
+        android:text="Pilates"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.631"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.487" />
+
+    <ImageButton
+        android:id="@+id/swimming_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/circle_green_solid"
+        android:scaleType="fitCenter"
+        android:src="@drawable/nadar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.631"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.272" />
+
+    <TextView
+        android:id="@+id/textViewNatacion"
+        android:layout_width="70dp"
+        android:layout_height="22dp"
+        android:gravity="center"
+        android:text="Natación"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.631"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.347" />
+
+    <ImageButton
+        android:id="@+id/cycling_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/circle_green_solid"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/bicicleta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.349"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.272" />
+
+    <TextView
+        android:id="@+id/textViewCiclismo"
+        android:layout_width="70dp"
+        android:layout_height="22dp"
+        android:gravity="center"
+        android:text="Ciclismo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.349"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.347" />
+
+    <ImageButton
+        android:id="@+id/crossfit_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/circle_green_solid"
+        android:padding="7dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/pesas"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.349"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.422" />
+
+    <TextView
+        android:id="@+id/textViewCrossfit"
+        android:layout_width="70dp"
+        android:layout_height="22dp"
+        android:gravity="center"
+        android:text="Crossfit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.349"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.487" />
+
+    <ImageButton
+        android:id="@+id/correr_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/circle_green_solid"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/correr"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.267" />
+
+    <ImageButton
+        android:id="@+id/pesas_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/circle_green_solid"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/crossfit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.422" />
+
+    <TextView
+        android:id="@+id/textViewPesas"
+        android:layout_width="70dp"
+        android:layout_height="22dp"
+        android:gravity="center"
+        android:text="Pesas"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.487" />
+
+    <TextView
+        android:id="@+id/training_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Entrenamientos"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewCorrer"
+        android:layout_width="70dp"
+        android:layout_height="22dp"
+        android:gravity="center"
+        android:text="Correr"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.342" />
+
+    <ImageView
+        android:id="@+id/imageViewActividades2"
+        android:layout_width="173dp"
+        android:layout_height="108dp"
+        android:background="@drawable/circular_shape"
+        android:clipToOutline="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/yogaactividades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.927"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.649" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:padding="5dp"
+        android:src="@drawable/corona"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.681" />
+
+    <ImageView
+        android:id="@+id/imageViewActividades1"
+        android:layout_width="161dp"
+        android:layout_height="100dp"
+        android:background="@drawable/circular_shape"
+        android:clipToOutline="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/crossfitactividades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.038"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.642" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:padding="5dp"
+        android:src="@drawable/corona"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.359"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.671" />
+
+    <ImageView
+        android:id="@+id/imageViewActividades3"
+        android:layout_width="161dp"
+        android:layout_height="103dp"
+        android:background="@drawable/circular_shape"
+        android:clipToOutline="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/comida2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.038"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.848" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:padding="5dp"
+        android:src="@drawable/corona"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.359"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.861" />
+
+    <TextView
+        android:id="@+id/nearby_title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recetas Saludables"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.038"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.727" />
+
+    <TextView
+        android:id="@+id/nearby_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Actividades cercanas"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.533" />
+
+    <ImageView
+        android:id="@+id/imageViewActividades4"
+        android:layout_width="169dp"
+        android:layout_height="102dp"
+        android:background="@drawable/circular_shape"
+        android:clipToOutline="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/comidasaludable1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.847" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:padding="5dp"
+        android:src="@drawable/corona"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.942"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.86" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/background_container"
-        android:layout_width="550dp"
-        android:layout_height="673dp"
-        android:background="@color/gris_fondo"
+        android:layout_width="394dp"
+        android:layout_height="163dp"
+        android:background="@color/green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.705">
+        app:layout_constraintVertical_bias="0.0">
 
-        <!-- Botones de entrenamiento -->
+        <ImageView
+            android:id="@+id/befitdashboardimage"
+            android:layout_width="72dp"
+            android:layout_height="62dp"
+            android:src="@drawable/befit_logo_black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/training_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="16dp"
-            android:text="Entrenamientos"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_bar"
+            android:layout_width="225dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/searchview_background"
+            android:iconifiedByDefault="false"
+            android:queryHint="Buscar..."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.572"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/todo_button"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/vertodo"
-            android:background="@drawable/circle_green_solid"
-            android:scaleType="fitCenter"
-            android:padding="7dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.821"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.32" />
-
-        <ImageButton
-            android:id="@+id/pilates_button"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:background="@drawable/circle_green_solid"
-            android:scaleType="fitCenter"
-            android:src="@drawable/pilates"
-            android:padding="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.606"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.32" />
-
-        <ImageButton
-            android:id="@+id/crossfit_button"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:background="@drawable/circle_green_solid"
-            android:scaleType="fitCenter"
-            android:src="@drawable/pesas"
-            android:padding="7dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.389"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.32" />
-
-        <ImageButton
-            android:id="@+id/pesas_button"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:background="@drawable/circle_green_solid"
-            android:scaleType="fitCenter"
-            android:src="@drawable/crossfit"
-            android:padding="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.17"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.32" />
-
-        <ImageButton
-            android:id="@+id/yoga_button"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:background="@drawable/circle_green_solid"
-            android:scaleType="fitCenter"
-            android:src="@drawable/yoga"
-            android:padding="7dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.821"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.111" />
-
-        <ImageButton
-            android:id="@+id/swimming_button"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:background="@drawable/circle_green_solid"
-            android:scaleType="fitCenter"
-            android:src="@drawable/nadar"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.608"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.111" />
-
-        <ImageButton
-            android:id="@+id/cycling_button"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:background="@drawable/circle_green_solid"
-            android:scaleType="fitCenter"
-            android:src="@drawable/bicicleta"
-            android:padding="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.391"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.111" />
-
-        <ImageButton
-            android:id="@+id/correr_button"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:background="@drawable/circle_green_solid"
-            android:scaleType="fitCenter"
-            android:src="@drawable/correr"
-            android:padding="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.17"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.112" />
-
-        <TextView
-            android:id="@+id/nearby_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="308dp"
-            android:text="Actividades cercanas"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/nearby_title2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="488dp"
-            android:text="Recetas Saludables"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textViewCorrer"
-            android:layout_width="70dp"
-            android:layout_height="22dp"
-            android:text="Correr"
-            android:gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.168"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.23" />
-
-        <TextView
-            android:id="@+id/textViewCiclismo"
-            android:layout_width="70dp"
-            android:layout_height="22dp"
-            android:text="Ciclismo"
-            android:gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.389"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.23" />
-
-        <TextView
-            android:id="@+id/textViewNatacion"
-            android:layout_width="70dp"
-            android:layout_height="22dp"
-            android:text="Natación"
-            android:gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.606"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.23" />
-
-        <TextView
-            android:id="@+id/textViewPesas"
-            android:layout_width="70dp"
-            android:layout_height="22dp"
-            android:text="Pesas"
-            android:gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.168"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.417" />
-
-        <TextView
-            android:id="@+id/textViewCrossfit"
-            android:layout_width="70dp"
-            android:layout_height="22dp"
-            android:text="Crossfit"
-            android:gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.389"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.417" />
-
-        <TextView
-            android:id="@+id/textViewPilates"
-            android:layout_width="70dp"
-            android:layout_height="22dp"
-            android:text="Pilates"
-            android:gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.606"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.417" />
-
-        <TextView
-            android:id="@+id/textViewTodo"
-            android:layout_width="70dp"
-            android:layout_height="22dp"
-            android:text="Ver Todo"
-            android:gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.82"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.417" />
-
-        <TextView
-            android:id="@+id/textViewYoga"
-            android:layout_width="70dp"
-            android:layout_height="22dp"
-            android:text="Yoga"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.82"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.23" />
-
         <ImageView
-            android:id="@+id/imageViewActividades1"
-            android:layout_width="183dp"
-            android:layout_height="115dp"
-            android:src="@drawable/crossfitactividades"
-            android:background="@drawable/circular_shape"
-            android:scaleType="centerCrop"
-            android:clipToOutline="true"
+            android:id="@+id/imageViewPremium"
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:src="@drawable/corona"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.217"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.63" />
+            app:layout_constraintVertical_bias="0.033" />
 
-        <ImageView
-            android:id="@+id/imageViewActividades3"
-            android:layout_width="183dp"
-            android:layout_height="115dp"
-            android:background="@drawable/circular_shape"
-            android:clipToOutline="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/comida2"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/welcome_container"
+            android:layout_width="365dp"
+            android:layout_height="83dp"
+            android:layout_margin="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.22"
+            app:layout_constraintHorizontal_bias="0.526"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.94" />
+            app:layout_constraintVertical_bias="1.0">
 
-        <ImageView
-            android:id="@+id/imageViewActividades4"
-            android:layout_width="183dp"
-            android:layout_height="115dp"
-            android:background="@drawable/circular_shape"
-            android:clipToOutline="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/comidasaludable1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.765"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.939" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/user_avatar"
+                android:layout_width="80dp"
+                android:layout_height="77dp"
+                android:src="@drawable/perfilbefit"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/CircularImage" />
 
-        <ImageView
-            android:id="@+id/imageViewActividades2"
-            android:layout_width="183dp"
-            android:layout_height="115dp"
-            android:src="@drawable/yogaactividades"
-            android:background="@drawable/circular_shape"
-            android:scaleType="centerCrop"
-            android:clipToOutline="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.762"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.63" />
+            <TextView
+                android:id="@+id/welcome_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="¡Bienvenido!"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/user_avatar"
+                app:layout_constraintTop_toTopOf="parent" />
 
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/user_name"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/user_avatar"
+                app:layout_constraintTop_toBottomOf="@id/welcome_text" />
+
+            <ImageView
+                android:id="@+id/imageViewCalendario"
+                android:layout_width="53dp"
+                android:layout_height="43dp"
+                android:src="@drawable/calendario"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.529" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ImageView
-        android:id="@+id/befitdashboardimage"
-        android:layout_width="72dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="3dp"
-        android:src="@drawable/befit_logo_black"
-        app:layout_constraintBottom_toTopOf="@+id/welcome_container"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/search_bar"
-        android:layout_width="285dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/searchview_background"
-        android:iconifiedByDefault="false"
-        android:queryHint="Buscar..."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -433,19 +503,8 @@
         android:background="@color/white"
         app:itemIconTint="@null"
         app:itemTextColor="@color/black"
-        app:menu="@menu/bottom_navigation_menu"
         app:labelVisibilityMode="labeled"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_navigation_menu" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:src="@drawable/corona"
-        app:layout_constraintBottom_toTopOf="@+id/background_container"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.975"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.123" />
 </androidx.constraintlayout.widget.ConstraintLayout>
