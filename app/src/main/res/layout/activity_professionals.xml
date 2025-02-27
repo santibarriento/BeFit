@@ -62,11 +62,11 @@
             android:id="@+id/ratings"
             android:layout_width="112dp"
             android:layout_height="29dp"
-            android:layout_marginTop="276dp"
+            android:layout_marginTop="392dp"
             android:orientation="horizontal"
             android:paddingTop="4dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.143"
+            app:layout_constraintHorizontal_bias="0.696"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -152,7 +152,7 @@
             android:id="@+id/descripcion_experto"
             android:layout_width="353dp"
             android:layout_height="139dp"
-            android:layout_marginTop="400dp"
+            android:layout_marginTop="428dp"
             android:gravity="center"
             android:paddingTop="8dp"
             android:paddingBottom="16dp"
@@ -160,7 +160,7 @@
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.446"
+            app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -168,26 +168,29 @@
             android:id="@+id/profesion_experto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="12dp"
             android:text="Nutricionista"
             android:textColor="@android:color/black"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.37"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/nombre_experto" />
 
         <ImageView
             android:id="@+id/foto_experto"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
+            android:layout_width="144dp"
+            android:layout_height="143dp"
             android:layout_marginTop="-55dp"
-            android:background="@drawable/circular_shape"
+            android:background="@drawable/circulo_expertos"
+            android:clipToOutline="true"
             android:scaleType="centerCrop"
             android:src="@drawable/nutricionista"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.514"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/portada" />
+            app:layout_constraintTop_toBottomOf="@id/portada"
+            app:shapeAppearanceOverlay="@style/CircularImage" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

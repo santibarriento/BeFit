@@ -1,6 +1,10 @@
 package santiago.barr.befit;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,7 +27,7 @@ public class ProfessionalsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_professionals);  // This links your XML layout
-
+        setupBottomNavigation();  // Activa la barra de navegación
         // Initialize views
         backButton = findViewById(R.id.back_button_pref);
         contactButton = findViewById(R.id.btn_contactar);
@@ -58,7 +62,7 @@ public class ProfessionalsActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
                         return true;
                     } else if (itemId == R.id.nav_trainings) {
-                        startActivity(new Intent(getApplicationContext(), TrainingsActivity.class));
+                        startActivity(new Intent(getApplicationContext(), EjercicioActivity.class));
                         return true;
                     } else if (itemId == R.id.nav_professionals) {
                         startActivity(new Intent(getApplicationContext(), ProfessionalsActivity.class));
@@ -75,5 +79,18 @@ public class ProfessionalsActivity extends AppCompatActivity {
             });
         }
     }
+    private Bitmap getCircularBitmap(Bitmap bitmap) {
+        int size = Math.min(bitmap.getWidth(), bitmap.getHeight());
+        Bitmap output = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
 
+        Canvas canvas = new Canvas(output);
+        Paint paint = new Paint();
+        paint.setAntiAlias(true);
+        paint.setShader(new BitmapShader(bitmap, BitmapShader.TileMode.CLAMP, BitmapShader.TileMode.CLAMP));
+
+        float radius = size / 2f;
+        canvas.drawCircle(radius, radius, radius, paint);
+
+        return output;
+    }
 }

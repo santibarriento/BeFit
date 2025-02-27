@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "santiago.barr.befit"
-        minSdk = 34
+        minSdk = 31
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -33,6 +33,7 @@ android {
 }
 
 dependencies {
+    implementation ("com.google.android.material:material:1.8.0")
     implementation("com.google.android.gms:play-services-auth:20.7.0") // Biblioteca para Google Sign-In
     implementation ("de.hdodenhof:circleimageview:3.1.0")
     implementation ("com.github.bumptech.glide:glide:4.16.0")

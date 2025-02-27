@@ -105,7 +105,7 @@ public class ChatActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
                         return true;
                     } else if (itemId == R.id.nav_trainings) {
-                        startActivity(new Intent(getApplicationContext(), TrainingsActivity.class));
+                        startActivity(new Intent(getApplicationContext(), EjercicioActivity.class));
                         return true;
                     } else if (itemId == R.id.nav_professionals) {
                         startActivity(new Intent(getApplicationContext(), ProfessionalsActivity.class));

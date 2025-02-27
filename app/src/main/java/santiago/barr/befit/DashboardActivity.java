@@ -65,6 +65,15 @@ public class DashboardActivity extends Activity {
             user_nameDBR.setText(firebaseUser.getDisplayName());
             loadGoogleUserInfo();
         }
+        // Encuentra la vista y asigna el listener de calendario
+        ImageView imageViewCalendario = findViewById(R.id.imageViewCalendario);
+        imageViewCalendario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DashboardActivity.this, CalendarActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     // Método genérico para asignar un OnClickListener con mensaje dinámico
@@ -95,7 +104,7 @@ public class DashboardActivity extends Activity {
                         startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
                         return true;
                     } else if (itemId == R.id.nav_trainings) {
-                        startActivity(new Intent(getApplicationContext(), TrainingsActivity.class));
+                        startActivity(new Intent(getApplicationContext(), EjercicioActivity.class));
                         return true;
                     } else if (itemId == R.id.nav_professionals) {
                         startActivity(new Intent(getApplicationContext(), ProfessionalsActivity.class));

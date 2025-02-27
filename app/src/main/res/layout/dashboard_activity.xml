@@ -14,10 +14,9 @@
         android:layout_margin="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.081">
+        app:layout_constraintVertical_bias="0.065">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/user_avatar"
@@ -52,7 +51,7 @@
             app:layout_constraintTop_toBottomOf="@id/welcome_text" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageViewCalendario"
             android:layout_width="53dp"
             android:layout_height="43dp"
             android:src="@drawable/calendario"

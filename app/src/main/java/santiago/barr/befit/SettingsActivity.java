@@ -7,6 +7,8 @@ import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.InputType;
 import android.util.Log;
 import android.view.MenuItem;
@@ -19,6 +21,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageRequest;
@@ -45,7 +48,9 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settingsactivity);
+
         setupBottomNavigation(); // Barra de navegación
+
         // Inicializar Firebase Database
         databaseReference = FirebaseDatabase.getInstance("https://befit-81d9e-default-rtdb.europe-west1.firebasedatabase.app/").getReference("users");
 
@@ -63,6 +68,28 @@ public class SettingsActivity extends AppCompatActivity {
         silentModeSwitch = findViewById(R.id.silent_mode_switch);
         darkModeSwitch = findViewById(R.id.dark_mode_switch);
         ImageView backButton = findViewById(R.id.back_button_pref);
+
+
+        // Cargar el estado de modo guardado
+        SharedPreferences prefs = getSharedPreferences("settings", MODE_PRIVATE);
+        boolean isDarkMode = prefs.getBoolean("dark_mode", false);
+        darkModeSwitch.setChecked(isDarkMode);
+
+        // Listener para cambiar el tema
+     /*   darkModeSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putBoolean("dark_mode", isChecked);
+            editor.apply(); // Guardar configuración
+            // Aplicar el cambio de tema
+            if (isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            }
+
+            // Retrasar recreate() para evitar ANR
+            new Handler(Looper.getMainLooper()).postDelayed(this::recreate, 300);
+        });*/
 
         // Listener para el botón de retroceso
         backButton.setOnClickListener(v -> finish());
@@ -156,7 +183,7 @@ public class SettingsActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
                         return true;
                     } else if (itemId == R.id.nav_trainings) {
-                        startActivity(new Intent(getApplicationContext(), TrainingsActivity.class));
+                        startActivity(new Intent(getApplicationContext(), EjercicioActivity.class));
                         return true;
                     } else if (itemId == R.id.nav_professionals) {
                         startActivity(new Intent(getApplicationContext(), ProfessionalsActivity.class));
