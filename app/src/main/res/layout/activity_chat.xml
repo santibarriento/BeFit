@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/green"
+    android:background="@color/gris_fondo"
     tools:context=".ChatActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -17,126 +17,128 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_navigation_menu" />
 
-    <ImageView
-        android:id="@+id/befitimagetop"
-        android:layout_width="106dp"
-        android:layout_height="77dp"
-        android:layout_gravity="center"
-        android:contentDescription="Profile Image"
-        android:scaleType="centerCrop"
-        android:src="@drawable/befit_logo_black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.003" />
-
-    <ImageView
-        android:id="@+id/back_button_pref"
-        android:layout_width="40dp"
-        android:layout_height="34dp"
-        android:layout_gravity="center"
-        android:scaleType="centerCrop"
-        android:src="@drawable/left_arrow"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.018" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/background_container"
-        android:layout_width="410dp"
-        android:layout_height="651dp"
-        android:background="@color/gris_fondo"
+        android:layout_width="409dp"
+        android:layout_height="111dp"
+        android:background="@color/green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.418"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.001">
 
-        <TextView
-            android:id="@+id/textView_Mensajes"
-            android:layout_width="125dp"
-            android:layout_height="40dp"
-            android:text="Mensajes"
-            android:textSize="24sp"
-            android:textStyle="bold|italic"
+
+        <ImageView
+            android:id="@+id/befitimagetop"
+            android:layout_width="106dp"
+            android:layout_height="77dp"
+            android:layout_gravity="center"
+            android:contentDescription="Profile Image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/befit_logo_black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.872"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/back_button_pref"
+            android:layout_width="40dp"
+            android:layout_height="34dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/left_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.092"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.025" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="56dp"
-            android:background="@drawable/rounded_border"
-            android:scaleType="fitCenter"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.43"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/mensaje1" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/rounded_border"
-            android:scaleType="fitCenter"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.424"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageView2"
-            app:srcCompat="@drawable/mensaje2" />
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/rounded_border"
-            android:scaleType="fitCenter"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.424"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3"
-            app:srcCompat="@drawable/mensaje3" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/rounded_border"
-            android:scaleType="fitCenter"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.424"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4"
-            app:srcCompat="@drawable/menaje4" />
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:background="@drawable/rounded_border"
-            android:scaleType="fitCenter"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.424"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView5"
-            app:srcCompat="@drawable/mensaje5" />
-
-
+            app:layout_constraintVertical_bias="0.493" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_border"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.59"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.222"
+        app:srcCompat="@drawable/mensaje1" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_border"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.375"
+        app:srcCompat="@drawable/mensaje2" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_border"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.528"
+        app:srcCompat="@drawable/mensaje3" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_border"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.68"
+        app:srcCompat="@drawable/menaje4" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_border"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.845"
+        app:srcCompat="@drawable/mensaje5" />
+
+    <TextView
+        android:id="@+id/textView_Mensajes"
+        android:layout_width="125dp"
+        android:layout_height="40dp"
+        android:text="Mensajes"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.148" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

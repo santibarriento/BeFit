@@ -26,41 +26,44 @@
         android:id="@+id/nombre_experto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="436dp"
         android:paddingTop="8dp"
         android:text="Daniela Álvarez"
         android:textColor="@android:color/black"
         android:textSize="22sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.484" />
 
     <TextView
         android:id="@+id/profesion_experto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="484dp"
         android:text="Nutricionista"
         android:textColor="@android:color/black"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.312"
+        app:layout_constraintHorizontal_bias="0.275"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.536" />
 
     <LinearLayout
         android:id="@+id/ratings"
         android:layout_width="112dp"
         android:layout_height="29dp"
-        android:layout_marginTop="476dp"
         android:orientation="horizontal"
         android:paddingTop="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.692"
+        app:layout_constraintHorizontal_bias="0.702"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.532">
 
         <ImageView
             android:layout_width="24dp"
@@ -100,34 +103,36 @@
 
     <TextView
         android:id="@+id/descripcion_experto"
-        android:layout_width="350dp"
-        android:layout_height="184dp"
-        android:layout_marginTop="524dp"
+        android:layout_width="368dp"
+        android:layout_height="226dp"
         android:gravity="center"
         android:paddingTop="8dp"
         android:paddingBottom="16dp"
         android:text="@string/expertodesc"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.77" />
 
     <Button
         android:id="@+id/btn_contactar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="344dp"
         android:backgroundTint="@color/green"
         android:paddingHorizontal="16dp"
         android:paddingVertical="8dp"
         android:text="Contactar"
         android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.399" />
 
     <ImageView
         android:id="@+id/foto_experto"
@@ -138,9 +143,12 @@
         android:clipToOutline="true"
         android:scaleType="centerCrop"
         android:src="@drawable/nutricionista"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/portada"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.37"
         app:shapeAppearanceOverlay="@style/CircularImage" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
